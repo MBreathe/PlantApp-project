@@ -1,0 +1,24 @@
+/*
+<weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name
+
+    .handjet-<uniquifier> {
+                  font-family: "Handjet", sans-serif;
+                  font-optical-sizing: auto;
+                  font-weight: <weight>;
+                  font-style: normal;
+                  font-variation-settings:
+                          "ELGR" 2,
+                          "ELSH" 2.4;
+              }
+<weight>: Use a value from 100 to 800
+<uniquifier>: Use a unique and descriptive class name
+
+    .jetbrains-mono-<uniquifier> {
+                         font-family: "JetBrains Mono", monospace;
+                         font-optical-sizing: auto;
+                         font-weight: <weight>;
+                         font-style: normal;
+                     }
+*/
+
