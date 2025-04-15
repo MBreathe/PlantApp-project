@@ -22,11 +22,17 @@ p {
     font-size: 3.6rem;
 }
 /*
-    setting up unified coloring
+    setting up global classes
 */
 body {
     background-color: #EFEEE9;
     height: 100vh;
+}
+.display-none {
+    display: none;
+}
+.display-block {
+    display: block;
 }
 
 /*
@@ -50,7 +56,6 @@ body {
     border: none;
     box-shadow: -0.3rem 0.3rem 0 #2F2C27;
     padding: 0.5rem;
-    margin-bottom: 4rem;
     margin-top: 20rem;
 }
 #search-a-plant::placeholder {
@@ -62,6 +67,19 @@ body {
 #search-a-plant:focus {
     outline: none;
 }
+
+#search-suggestions-container {
+    width: 59vw;
+    position: relative;
+    top: 0;
+    font-family: 'JetBrains', monospace;
+    font-size: 2rem;
+    background-color: #D9D9D9;
+}
+#search-suggestions-container ul li {
+    list-style: none;
+}
+
 #feeling-lucky-btn {
     font-size: 1.6rem;
     font-family: 'JetBrains', monospace;
@@ -70,5 +88,6 @@ body {
     border: 0.1rem solid #2F2C27;
     border-radius: 0.3rem;
     padding: 0.2rem;
+    margin-top: 4rem;
     cursor: pointer;
 }

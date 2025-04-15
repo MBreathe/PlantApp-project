@@ -5,7 +5,7 @@ export function renderLanding() {
     element.innerHTML = String.raw `
     <input id="search-a-plant" type="search" placeholder="search a plant">
     <div id="search-suggestions-container">
-        <ul class="search-suggestions"></ul>    
+        <ul id="search-suggestions"></ul>    
     </div>
     <button id="feeling-lucky-btn">feeling lucky?</button>
     `;
