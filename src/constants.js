@@ -1,3 +1,5 @@
+export const APP_CONTAINER = document.querySelector('#app');
+
 
 export class KeyChain {
     constructor(apiName, apiKey) {

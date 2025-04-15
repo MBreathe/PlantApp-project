@@ -4,7 +4,7 @@ export function renderLanding() {
     element.className = 'landing';
     element.innerHTML = String.raw `
     <div class="landing">
-        <input type="search" placeholder="search a plant">
+        <input id="search-a-plant" type="search" placeholder="search a plant">
         <div id="search-suggestions"></div>
         <button id="feeling-lucky-btn">feeling lucky?</button>
     </div>`;

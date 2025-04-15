@@ -1,24 +1,74 @@
+html {
+    font-size: 62.5%;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 /*
-<weight>: Use a value from 100 to 900
-<uniquifier>: Use a unique and descriptive class name
+    setting up font-sizing
+*/
+h1 {
+    font-size: 6.4rem;
+}
+h2 {
+    font-size: 4.8rem;
+}
+h3 {
+    font-size: 4rem;
+}
+p {
+    font-size: 3.6rem;
+}
+/*
+    setting up unified coloring
+*/
+body {
+    background-color: #EFEEE9;
+    height: 100vh;
+}
 
-    .handjet-<uniquifier> {
-                  font-family: "Handjet", sans-serif;
-                  font-optical-sizing: auto;
-                  font-weight: <weight>;
-                  font-style: normal;
-                  font-variation-settings:
-                          "ELGR" 2,
-                          "ELSH" 2.4;
-              }
-<weight>: Use a value from 100 to 800
-<uniquifier>: Use a unique and descriptive class name
-
-    .jetbrains-mono-<uniquifier> {
-                         font-family: "JetBrains Mono", monospace;
-                         font-optical-sizing: auto;
-                         font-weight: <weight>;
-                         font-style: normal;
-                     }
+/*
+    landingPage styling
 */
 
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search-a-plant {
+    font-size: 2rem;
+    font-family: 'JetBrains', monospace;
+    color: #2F2C27;
+    background-color: #D9D9D9;
+    width: 60vw;
+    border-radius: 0.3rem;
+    border: none;
+    box-shadow: -0.3rem 0.3rem 0 #2F2C27;
+    padding: 0.5rem;
+    margin-bottom: 4rem;
+    margin-top: 20rem;
+}
+#search-a-plant::placeholder {
+    color: #2F2C27;
+}
+#search-a-plant:focus::placeholder {
+    color: rgba(47, 44, 39, 0.5);
+}
+#search-a-plant:focus {
+    outline: none;
+}
+#feeling-lucky-btn {
+    font-size: 1.6rem;
+    font-family: 'JetBrains', monospace;
+    color: #2F2C27;
+    background-color: #EFEEE9;
+    border: 0.1rem solid #2F2C27;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    cursor: pointer;
+}
