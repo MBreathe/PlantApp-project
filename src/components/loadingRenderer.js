@@ -1,7 +1,7 @@
 
 export function renderLoadingScreen() {
     const element = document.createElement('div');
-    element.className = 'loading';
+    element.className = 'loading-page';
     element.innerHTML = String.raw `
     <span>loading</span><span>resources</span>
     <div id="loading-bar-container">

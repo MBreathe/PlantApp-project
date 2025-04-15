@@ -1,6 +1,5 @@
 export const APP_CONTAINER = document.querySelector('#app');
 
-
 export class KeyChain {
     constructor(apiName, apiKey) {
         this._apiName = apiName;
@@ -14,3 +13,5 @@ export class KeyChain {
         return this._apiKey;
     }
 }
+
+export const PERENUAL_KEY_CHAIN = new KeyChain('perenual', 'sk-D2uq67f3bd2d72baf9656');

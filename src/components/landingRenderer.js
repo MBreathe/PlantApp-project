@@ -1,12 +1,13 @@
 
 export function renderLanding() {
     const element = document.createElement('div');
-    element.className = 'landing';
+    element.className = 'landing-page';
     element.innerHTML = String.raw `
-    <div class="landing">
-        <input id="search-a-plant" type="search" placeholder="search a plant">
-        <div id="search-suggestions"></div>
-        <button id="feeling-lucky-btn">feeling lucky?</button>
-    </div>`;
+    <input id="search-a-plant" type="search" placeholder="search a plant">
+    <div id="search-suggestions-container">
+        <ul class="search-suggestions"></ul>    
+    </div>
+    <button id="feeling-lucky-btn">feeling lucky?</button>
+    `;
     return element;
 }
