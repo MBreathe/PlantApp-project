@@ -1,6 +1,6 @@
 import {APP_CONTAINER} from "../constants.js";
 import {renderLanding} from "../components/landingRenderer.js";
-import {mainLoadingAnimation, renderSuggestions} from "../containers/mainFunctions.js";
+import {landingPageRenderError, mainLoadingAnimation, renderSuggestions} from "../containers/mainFunctions.js";
 import {initPlantPage} from "./plantPage.js";
 import {renderLoadingScreen} from "../components/loadingRenderer.js";
 
@@ -22,18 +22,22 @@ export function initLandingPage() {
         clearTimeout(timeout);
         searchSuggestions.style.display = 'block';
 
-        if (searchBarElement.value.length > 1) {
-            timeout = setTimeout(async () => await renderSuggestions(searchBarElement.value), 250)
+        if (searchBarElement.value.length > 1 && e.key !== 'Enter') {
+            timeout = setTimeout(async () => {
+                try {
+                    //await renderSuggestions(searchBarElement.value);
+                } catch (e) {
+                    landingPageRenderError(`Ran into an error: ${e}, try again later`);
+                }
+            }, 250)
         }
         if (e.key === 'Enter' && searchBarElement.value.length > 1) {
             initPlantPage(searchBarElement.value);
         }
     })
-    searchBarElement.addEventListener("blur", () => searchSuggestions.style.display = 'none')
-    searchSuggestions.addEventListener('click', (e) => {
-        if (e.target.tagName === 'LI') {
-            searchBarElement.value = e.target.textContent;
+    searchBarElement.addEventListener("change", (e) => {
+        if (e.target.value.length === 0) {
+            searchSuggestions.style.display = 'none';
         }
-    });
-
+    })
 }

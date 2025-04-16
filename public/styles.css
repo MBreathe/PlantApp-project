@@ -120,7 +120,13 @@ body {
 }
 #search-suggestions-container ul li {
     list-style: none;
-
+    cursor: pointer;
+}
+#search-suggestions-container ul *:not(:first-child) {
+    border-top: 0.1rem solid #2F2C27;
+}
+#search-suggestions-container ul li:hover {
+    background-color: #3E8953;
 }
 
 #feeling-lucky-btn {

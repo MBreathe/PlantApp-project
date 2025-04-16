@@ -1,18 +1,38 @@
 import {fetchPlantData} from "../api/fetchers.js";
 import {STATUS} from "../constants.js";
+import {initPlantPage} from "../pages/plantPage.js";
 
 
 
 export async function renderSuggestions(plantName) {
+    const searchBarElement = document.querySelector('#search-a-plant');
     const suggestionList = document.querySelector('#search-suggestions');
-    const plantData = await fetchPlantData(plantName);
-    suggestionList.innerHTML = '';
-    plantData.forEach(plant => {
-        const suggestionEl = document.createElement("li");
-        const plantName = plant.common_name
-        suggestionEl.innerHTML = plantName.toLowerCase();
-        suggestionList.appendChild(suggestionEl);
-    })
+    try {
+        suggestionList.style.border = '0.1rem solid #2F2C27'
+        const data = await fetchPlantData(plantName);
+        const plantData = [...new Set(data)];
+        console.log(plantData);
+        if (plantData.length > 5) {
+            plantData.length = 5;
+        }
+        suggestionList.innerHTML = '';
+        plantData.forEach(plant => {
+            const suggestionEl = document.createElement("li");
+            suggestionEl.className = 'suggestion';
+            const plantName = plant.common_name;
+            suggestionEl.innerHTML = plantName.toLowerCase();
+            suggestionList.appendChild(suggestionEl);
+        })
+        suggestionList.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') {
+                searchBarElement.value = e.target.textContent;
+                initPlantPage(searchBarElement.value);
+            }
+        });
+    } catch (e) {
+        console.error(e);
+    }
+
 }
 
 export function loadingDots() {
@@ -51,4 +71,10 @@ export function mainLoadingAnimation() {
             }, 500)
         }
     }, 100);
+}
+
+export function landingPageRenderError(error) {
+    const searchBarElement = document.querySelector('#search-a-plant');
+    searchBarElement.value = error;
+    searchBarElement.color = 'red';
 }

@@ -5,6 +5,7 @@ export function renderPlantPage(plantName) {
     element.innerHTML = String.raw `
     <img alt="Picture of ${plantName}"/>
     <h1>${plantName}</h1>
+    
     `;
     return element;
 }

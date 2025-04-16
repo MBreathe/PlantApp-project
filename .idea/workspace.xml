@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f94921fc-d833-4235-8164-fc75656ef017" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/fetchers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/fetchers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/plantPageRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/plantPageRenderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/mainFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/mainFunctions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/landingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/landingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/plantPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/plantPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,23 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Node.js.mainFunctions.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Node.js.mainFunctions.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\BidonLoverXXX\WebstormProjects\untitled\src\assets\readme" />
@@ -92,6 +91,8 @@
       <workItem from="1744708465715" duration="18986000" />
       <workItem from="1744741095160" duration="8000" />
       <workItem from="1744794145288" duration="18663000" />
+      <workItem from="1744815754528" duration="128000" />
+      <workItem from="1744831676367" duration="4972000" />
     </task>
     <servers />
   </component>
