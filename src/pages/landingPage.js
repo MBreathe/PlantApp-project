@@ -23,7 +23,7 @@ export function initLandingPage() {
         searchSuggestions.style.display = 'block';
 
         if (searchBarElement.value.length > 1) {
-            //timeout = setTimeout(async () => await renderSuggestions(searchBarElement.value), 250)
+            timeout = setTimeout(async () => await renderSuggestions(searchBarElement.value), 250)
         }
         if (e.key === 'Enter' && searchBarElement.value.length > 1) {
             initPlantPage(searchBarElement.value);
@@ -31,9 +31,9 @@ export function initLandingPage() {
     })
     searchBarElement.addEventListener("blur", () => searchSuggestions.style.display = 'none')
     searchSuggestions.addEventListener('click', (e) => {
-        if (e.target.tagName === 'li') {
+        if (e.target.tagName === 'LI') {
             searchBarElement.value = e.target.textContent;
         }
-    })
+    });
 
 }

@@ -1,14 +1,15 @@
-import {fetchPlantNames} from "../api/fetchers.js";
+import {fetchPlantData} from "../api/fetchers.js";
 import {STATUS} from "../constants.js";
 
 
 
 export async function renderSuggestions(plantName) {
     const suggestionList = document.querySelector('#search-suggestions');
-    const plantNames = await fetchPlantNames(plantName);
+    const plantData = await fetchPlantData(plantName);
     suggestionList.innerHTML = '';
-    plantNames.forEach(plantName => {
+    plantData.forEach(plant => {
         const suggestionEl = document.createElement("li");
+        const plantName = plant.common_name
         suggestionEl.innerHTML = plantName.toLowerCase();
         suggestionList.appendChild(suggestionEl);
     })
@@ -32,11 +33,12 @@ export function mainLoadingAnimation() {
     let width = 0;
 
     const intervalId = setInterval(() => {
-        width += Math.floor(Math.random() * 3);
+        width += Math.floor(Math.random() * 4);
         percentage = (width / 60) * 100;
         loadingBar.style.width = `${width}vw`;
         loadingNum.innerHTML = `${percentage.toFixed(0)}%`;
 
+        // TODO: add animation to text in spans (at 20% increments)
 
         if (percentage >= 100) {
             clearInterval(intervalId);
