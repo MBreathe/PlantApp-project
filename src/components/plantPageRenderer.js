@@ -1,5 +1,5 @@
 
-export function renderPlantPage() {
+export function renderPlantPage(plantName) {
     const element = document.createElement('div');
     element.className = 'plant-page';
     element.innerHTML = String.raw `

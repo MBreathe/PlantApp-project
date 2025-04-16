@@ -1,5 +1,9 @@
 export const APP_CONTAINER = document.querySelector('#app');
-
+export const STATUS = {
+    searchPlantName: null,
+    page: null,
+    loading: false
+};
 
 export class KeyChain {
     constructor(apiName, apiKey, options = {}) {

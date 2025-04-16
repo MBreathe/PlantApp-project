@@ -1,7 +1,7 @@
 
 export function renderLanding() {
     const element = document.createElement('div');
-    element.className = 'landing-page';
+    element.className = 'landing-page display-flex';
     element.innerHTML = String.raw `
     <input id="search-a-plant" type="search" placeholder="search a plant">
     <div id="search-suggestions-container">

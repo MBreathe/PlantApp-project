@@ -5,21 +5,19 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'JetBrains', monospace;
 }
 /*
     setting up font-sizing
 */
 h1 {
-    font-size: 6.4rem;
+    font-size: 4.2rem;
 }
 h2 {
-    font-size: 4.8rem;
-}
-h3 {
-    font-size: 4rem;
+    font-size: 2.6rem;
 }
 p {
-    font-size: 3.6rem;
+    font-size: 1.6rem;
 }
 /*
     setting up global classes
@@ -28,11 +26,60 @@ body {
     background-color: #EFEEE9;
     height: 100vh;
 }
-.display-none {
+.display-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+    main loading page styling
+*/
+
+.loading-page {
+    background-color: #EFEEE9;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+}
+
+#loading-container {
+    margin-top: 20rem;
+}
+#loading-text-container {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+#loading-text-container :first-child {
+    margin-right: 1rem;
+}
+#loading-text-container *:not(:first-child) {
+    position: absolute;
     display: none;
 }
-.display-block {
-    display: block;
+/*
+    TODO: add animation later for switching text
+*/
+#loading-bar-container {
+    background-color: #D9D9D9;
+    width: 60vw;
+    border-radius: 0.3rem;
+    box-shadow: -0.3rem 0.3rem 0 #2F2C27;
+}
+#percentage {
+    font-size: 1.8rem;
+}
+.loading-page p {
+    text-align: center;
+}
+#loading-bar {
+    background-color: #3E8953;
+    width: 0vw;
+    border-radius: 0.3rem 0 0 0.3rem;
+    padding: 0.5rem;
 }
 
 /*
@@ -40,15 +87,11 @@ body {
 */
 
 .landing-page {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 #search-a-plant {
     font-size: 2rem;
-    font-family: 'JetBrains', monospace;
     color: #2F2C27;
     background-color: #D9D9D9;
     width: 60vw;
@@ -72,17 +115,16 @@ body {
     width: 59vw;
     position: relative;
     top: 0;
-    font-family: 'JetBrains', monospace;
     font-size: 2rem;
     background-color: #D9D9D9;
 }
 #search-suggestions-container ul li {
     list-style: none;
+
 }
 
 #feeling-lucky-btn {
     font-size: 1.6rem;
-    font-family: 'JetBrains', monospace;
     color: #2F2C27;
     background-color: #EFEEE9;
     border: 0.1rem solid #2F2C27;
@@ -90,4 +132,14 @@ body {
     padding: 0.2rem;
     margin-top: 4rem;
     cursor: pointer;
+}
+#feeling-lucky-btn:hover {
+    margin-top: 3.7rem;
+    margin-left: 0.3rem;
+    box-shadow: -0.3rem 0.3rem 0 #2F2C27;
+}
+#feeling-lucky-btn:active {
+    margin-top: 4rem;
+    margin-left: 0;
+    box-shadow: none;
 }
