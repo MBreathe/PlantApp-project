@@ -1,7 +1,7 @@
 import {APP_CONTAINER} from "../constants.js";
 import {renderPlantPage} from "../components/plantPageRenderer.js";
 import {fetchers} from "../api/fetchers.js";
-import {elementCreator} from "../containers/mainFunctions";
+import {elementCreator} from "../containers/mainFunctions.js";
 
 export function initPlantPage(plantName) {
     APP_CONTAINER.innerHTML = '';

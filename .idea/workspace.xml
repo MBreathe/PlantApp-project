@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f94921fc-d833-4235-8164-fc75656ef017" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/plantPage/hardiness-map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/fetchers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/fetchers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landingRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landingRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loadingRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loadingRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/plantPageRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/plantPageRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/mainFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/mainFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/landingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/landingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/plantPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/plantPage.js" afterDir="false" />
-    </list>
+    <list default="true" id="f94921fc-d833-4235-8164-fc75656ef017" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +89,7 @@
       <workItem from="1744794145288" duration="18663000" />
       <workItem from="1744815754528" duration="128000" />
       <workItem from="1744831676367" duration="5206000" />
-      <workItem from="1744878557199" duration="15160000" />
+      <workItem from="1744878557199" duration="15373000" />
     </task>
     <servers />
   </component>
