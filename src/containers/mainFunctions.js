@@ -1,12 +1,12 @@
 import {fetchers} from "../api/fetchers.js";
 import {STATUS} from "../constants.js";
 
-fetchers();
 
 export async function renderSuggestions(plantName) {
     const suggestionList = document.querySelector('#search-suggestions');
     try {
-        const data = await fetchers.fetchPlantList(plantName);
+        const { fetchPlantList } = fetchers();
+        const data = await fetchPlantList(plantName);
         const plantData = [...new Set(data)];
         suggestionList.style.border = '0.1rem solid #2F2C27'
         console.log(plantData);
