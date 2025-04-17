@@ -2,7 +2,9 @@ export const APP_CONTAINER = document.querySelector('#app');
 export const STATUS = {
     searchPlantName: null,
     page: null,
-    loading: false
+    loading: false,
+    plantId: null,
+    plantName: null
 };
 
 export class KeyChain {

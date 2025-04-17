@@ -1,6 +1,10 @@
-import {APP_CONTAINER} from "../constants.js";
+import {APP_CONTAINER, STATUS} from "../constants.js";
 import {renderLanding} from "../components/landingRenderer.js";
-import {landingPageRenderError, mainLoadingAnimation, renderSuggestions} from "../containers/mainFunctions.js";
+import {
+    animateLoadingBall,
+    mainLoadingAnimation,
+    renderSuggestions
+} from "../containers/mainFunctions.js";
 import {initPlantPage} from "./plantPage.js";
 import {renderLoadingScreen} from "../components/loadingRenderer.js";
 
@@ -23,21 +27,34 @@ export function initLandingPage() {
         searchSuggestions.style.display = 'block';
 
         if (searchBarElement.value.length > 1 && e.key !== 'Enter') {
-            timeout = setTimeout(async () => {
-                try {
-                    //await renderSuggestions(searchBarElement.value);
-                } catch (e) {
-                    landingPageRenderError(`Ran into an error: ${e}, try again later`);
-                }
+            timeout = setTimeout (() => {
+                animateLoadingBall();
+                setTimeout(async () => {
+                    await renderSuggestions(searchBarElement.value);
+                    animateLoadingBall();
+                }, 2000)
             }, 250)
         }
         if (e.key === 'Enter' && searchBarElement.value.length > 1) {
-            initPlantPage(searchBarElement.value);
+            animateLoadingBall();
+            setTimeout(() => {
+                animateLoadingBall();
+                initPlantPage(searchBarElement.value);
+            }, 3000);
         }
-    })
+    });
     searchBarElement.addEventListener("change", (e) => {
         if (e.target.value.length === 0) {
             searchSuggestions.style.display = 'none';
         }
-    })
+    });
+    if (searchSuggestions) {
+        searchSuggestions.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') {
+                searchBarElement.value = e.target.textContent;
+                searchSuggestions.style.display = 'none';
+            }
+        });
+    }
+
 }

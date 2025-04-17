@@ -1,16 +1,14 @@
-import {fetchPlantData} from "../api/fetchers.js";
+import {fetchers} from "../api/fetchers.js";
 import {STATUS} from "../constants.js";
-import {initPlantPage} from "../pages/plantPage.js";
 
-
+fetchers();
 
 export async function renderSuggestions(plantName) {
-    const searchBarElement = document.querySelector('#search-a-plant');
     const suggestionList = document.querySelector('#search-suggestions');
     try {
-        suggestionList.style.border = '0.1rem solid #2F2C27'
-        const data = await fetchPlantData(plantName);
+        const data = await fetchers.fetchPlantList(plantName);
         const plantData = [...new Set(data)];
+        suggestionList.style.border = '0.1rem solid #2F2C27'
         console.log(plantData);
         if (plantData.length > 5) {
             plantData.length = 5;
@@ -19,30 +17,14 @@ export async function renderSuggestions(plantName) {
         plantData.forEach(plant => {
             const suggestionEl = document.createElement("li");
             suggestionEl.className = 'suggestion';
-            const plantName = plant.common_name;
-            suggestionEl.innerHTML = plantName.toLowerCase();
+            const displayName = plant.common_name;
+            suggestionEl.innerHTML = displayName.toLowerCase();
             suggestionList.appendChild(suggestionEl);
         })
-        suggestionList.addEventListener('click', (e) => {
-            if (e.target.tagName === 'LI') {
-                searchBarElement.value = e.target.textContent;
-                initPlantPage(searchBarElement.value);
-            }
-        });
     } catch (e) {
+        landingPageRenderError(e);
         console.error(e);
     }
-
-}
-
-export function loadingDots() {
-    const loadingEls = document.querySelectorAll('.loading');
-    if (!STATUS.loading) {
-        STATUS.loading = true;
-        loadingEls.forEach(elem => elem.style.display = 'block');
-    }
-    STATUS.loading = false;
-    loadingEls.forEach(elem => elem.style.display = 'none');
 }
 
 export function mainLoadingAnimation() {
@@ -67,6 +49,8 @@ export function mainLoadingAnimation() {
             loadingNum.innerHTML = `100%`;
             setTimeout(() => {
                 const loadingPageEl = document.querySelector('.loading-page');
+                const orangeBall = document.querySelector('#loading-search-orange-ball');
+                orangeBall.style.display = 'block';
                 loadingPageEl.style.display = 'none';
             }, 500)
         }
@@ -74,7 +58,33 @@ export function mainLoadingAnimation() {
 }
 
 export function landingPageRenderError(error) {
-    const searchBarElement = document.querySelector('#search-a-plant');
-    searchBarElement.value = error;
-    searchBarElement.color = 'red';
+    const errorHandlerEl = document.querySelector('#error-handler');
+    errorHandlerEl.innerHTML = error;
+    errorHandlerEl.style.display = 'block';
+}
+
+export function animateLoadingBall() {
+    const orangeBall = document.querySelector('#loading-search-orange-ball');
+    if (!STATUS.loading) {
+        STATUS.loading = true;
+        orangeBall.style.animation = 'LoadingBall 1.2s linear infinite'
+        return;
+    }
+    if (STATUS.loading) {
+        STATUS.loading = false;
+        orangeBall.style.animation = 'none'
+    }
+}
+
+export function elementCreator(tag, parent, options = {}, text) {
+    const createdEl = document.createElement(tag);
+    if (options) {
+        for (const key in options) {
+            createdEl.setAttribute(key, options[key]);
+        }
+    }
+    if (text) {
+        createdEl.textContent = text;
+    }
+    parent.appendChild(createdEl);
 }

@@ -26,6 +26,11 @@ body {
     background-color: #EFEEE9;
     height: 100vh;
 }
+.container {
+    background-color: #D9D9D9;
+    border-radius: 0.3rem;
+    box-shadow: -0.3rem 0.3rem 0 #2F2C27;
+}
 .display-flex {
     display: flex;
     flex-direction: column;
@@ -44,11 +49,13 @@ body {
     justify-content: space-around;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
 #loading-container {
     margin-top: 20rem;
 }
+
 #loading-text-container {
     margin-bottom: 1rem;
     font-size: 1.8rem;
@@ -64,23 +71,24 @@ body {
     TODO: add animation later for switching text
 */
 #loading-bar-container {
-    background-color: #D9D9D9;
     width: 60vw;
-    border-radius: 0.3rem;
-    box-shadow: -0.3rem 0.3rem 0 #2F2C27;
 }
-#percentage {
-    font-size: 1.8rem;
-}
-.loading-page p {
-    text-align: center;
-}
+
 #loading-bar {
     background-color: #3E8953;
-    width: 0vw;
+    width: 0;
     border-radius: 0.3rem 0 0 0.3rem;
     padding: 0.5rem;
 }
+
+#percentage {
+    font-size: 1.8rem;
+}
+
+.loading-page p {
+    text-align: center;
+}
+
 
 /*
     landingPage styling
@@ -93,11 +101,8 @@ body {
 #search-a-plant {
     font-size: 2rem;
     color: #2F2C27;
-    background-color: #D9D9D9;
     width: 60vw;
-    border-radius: 0.3rem;
     border: none;
-    box-shadow: -0.3rem 0.3rem 0 #2F2C27;
     padding: 0.5rem;
     margin-top: 20rem;
 }
@@ -109,6 +114,41 @@ body {
 }
 #search-a-plant:focus {
     outline: none;
+}
+
+.search-bar-container {
+    display: flex;
+}
+#loading-bar-search {
+    width: 1.3rem;
+    height: 3.3rem;
+    margin-top: 20rem;
+    margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+#loading-search-orange-ball {
+    background-color: #F04227;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 1rem;
+    margin: 0.1rem;
+    position: relative;
+    top: 2rem;
+    display: none;
+}
+@keyframes LoadingBall {
+    0%, 100% { transform: translateY(0) }
+    50% { transform: translateY(-1.8rem) }
+}
+
+#error-handler {
+    display: none;
+    background-color: #F04227;
+    color: #EFEEE9;
+    margin-top: 1rem;
+    border: 0.1rem solid #2F2C27;
+    padding: 0.2rem;
 }
 
 #search-suggestions-container {
