@@ -25,4 +25,6 @@ export class KeyChain {
     }
 }
 
-export const PERENUAL_KEY_CHAIN = new KeyChain('perenual', 'sk-D2uq67f3bd2d72baf9656', { search: '&q=', page: '&page=' });
+export const PERENUAL_KEY_CHAIN = new KeyChain('perenual', 'sk-Vcbk6800e115d8cfa9855', { search: '&q=', page: '&page=' });
+// MAIN API-KEY 'sk-D2uq67f3bd2d72baf9656'
+// BACKUP API-KEY 'sk-Vcbk6800e115d8cfa9855'

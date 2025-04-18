@@ -11,15 +11,25 @@ export function fetchers() {
     }
 
     async function fetchPlantList(plantName) {
-        const url = `//https://perenual.com/api/v2/species-list?key=${PERENUAL_KEY_CHAIN.apiKey + PERENUAL_KEY_CHAIN.options.search + plantName}`;
-        const data =  await fetchData(url);
-        console.log('fetched data from plant api:', data);
-        return data.data;
+        try {
+            const url = `//https://perenual.com/api/v2/species-list?key=${PERENUAL_KEY_CHAIN.apiKey + PERENUAL_KEY_CHAIN.options.search + plantName}`;
+            const data =  await fetchData(url);
+            console.log('fetched data from plant api:', data);
+            return data.data;
+        } catch (e) {
+            console.error(`Failed to load plant list: ${e}`);
+            throw e;
+        }
     }
 
     async function fetchPlantDetails(plantId) {
-        const url = `https://perenual.com/api/v2/species/details/${plantId}?key=${PERENUAL_KEY_CHAIN.apiKey}`;
-        return await fetchData(url);
+        try {
+            const url = `https://perenual.com/api/v2/species/details/${plantId}?key=${PERENUAL_KEY_CHAIN.apiKey}`;
+            return await fetchData(url);
+        } catch (e) {
+            console.error(`Failed to fetch plant details: ${e}`);
+            throw e;
+        }
     }
     return {fetchPlantList, fetchPlantDetails};
 }

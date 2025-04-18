@@ -59,7 +59,7 @@ export function mainLoadingAnimation() {
 
 export function landingPageRenderError(error) {
     const errorHandlerEl = document.querySelector('#error-handler');
-    errorHandlerEl.innerHTML = error;
+    errorHandlerEl.innerHTML = `Encountered an error (${error}), please try again later.`;
     errorHandlerEl.style.display = 'block';
 }
 
