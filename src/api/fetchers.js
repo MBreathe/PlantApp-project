@@ -5,16 +5,15 @@ export function fetchers() {
     async function fetchData(url) {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`Unable to load data: ${response.status}`);
+            throw new Error(`Unable to load data: ${response.status}. Please try again later.`);
         }
         return response.json();
     }
 
     async function fetchPlantList(plantName) {
         try {
-            const url = `//https://perenual.com/api/v2/species-list?key=${PERENUAL_KEY_CHAIN.apiKey + PERENUAL_KEY_CHAIN.options.search + plantName}`;
+            const url = `https://perenual.com/api/v2/species-list?key=${PERENUAL_KEY_CHAIN.apiKey + PERENUAL_KEY_CHAIN.options.search + plantName}`;
             const data =  await fetchData(url);
-            console.log('fetched data from plant api:', data);
             return data.data;
         } catch (e) {
             console.error(`Failed to load plant list: ${e}`);
@@ -25,7 +24,8 @@ export function fetchers() {
     async function fetchPlantDetails(plantId) {
         try {
             const url = `https://perenual.com/api/v2/species/details/${plantId}?key=${PERENUAL_KEY_CHAIN.apiKey}`;
-            return await fetchData(url);
+            const data = await fetchData(url);
+            return data;
         } catch (e) {
             console.error(`Failed to fetch plant details: ${e}`);
             throw e;
