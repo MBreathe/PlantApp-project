@@ -131,11 +131,12 @@ export function renderDescriptionAndTags(plantInfo) {
   const topTagsArr = [
     { name: "cycle", textContent: cycle },
     { name: "indoor", textContent: indoor },
-    { name: "rare", className: 'tag-good', textContent: rare },
-    { name: "invasive", className: 'tag-bad', textContent: invasive },
+    { name: "rare", className: "tag-good", textContent: rare },
+    { name: "invasive", className: "tag-bad", textContent: invasive },
     {
       name: "poisonousToPets",
-      className: poisonousToPets === 'poisonous to pets' ? 'tag-bad' : 'tag-good',
+      className:
+        poisonousToPets === "poisonous to pets" ? "tag-bad" : "tag-good",
       textContent: poisonousToPets,
     },
     { name: "growthRate", textContent: growthRate },
