@@ -316,6 +316,14 @@ button:active {
   margin: 0.6rem;
   width: fit-content;
 }
+.tag-bad {
+  background-color: #f04227;
+  color: #efeee9;
+}
+.tag-good {
+  background-color: #3e8953;
+  color: #efeee9;
+}
 
 #hardiness-map {
   object-fit: contain;

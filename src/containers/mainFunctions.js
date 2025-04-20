@@ -131,10 +131,11 @@ export function renderDescriptionAndTags(plantInfo) {
   const topTagsArr = [
     { name: "cycle", textContent: cycle },
     { name: "indoor", textContent: indoor },
-    { name: "rare", textContent: rare },
-    { name: "invasive", textContent: invasive },
+    { name: "rare", className: 'tag-good', textContent: rare },
+    { name: "invasive", className: 'tag-bad', textContent: invasive },
     {
       name: "poisonousToPets",
+      className: poisonousToPets === 'poisonous to pets' ? 'tag-bad' : 'tag-good',
       textContent: poisonousToPets,
     },
     { name: "growthRate", textContent: growthRate },
@@ -150,6 +151,7 @@ export function renderDescriptionAndTags(plantInfo) {
       const tagEl = document.createElement("p");
       tagEl.textContent = tag.textContent;
       tagEl.className = "container tag";
+      if (tag.className) tagEl.classList.add(tag.className);
       topTagContainerEl.appendChild(tagEl);
     }
   });
