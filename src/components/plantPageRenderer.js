@@ -1,8 +1,7 @@
-
 export function renderPlantPage() {
-    const element = document.createElement('div');
-    element.className = 'plant-page';
-    element.innerHTML = String.raw `
+  const element = document.createElement("div");
+  element.className = "plant-page";
+  element.innerHTML = String.raw`
     <div class="display-flex loading-plant" id="loading-and-error-screen">
         <div class="container loading-plant" id="loading-plant-page-container">
             <div class="loading-plant" id="loader-container">
@@ -31,5 +30,5 @@ export function renderPlantPage() {
         <button id="return-to-search">return to search</button>
     </div>
     `;
-    return element;
+  return element;
 }

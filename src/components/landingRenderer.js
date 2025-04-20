@@ -1,8 +1,7 @@
-
 export function renderLanding() {
-    const element = document.createElement('div');
-    element.className = 'landing-page display-flex';
-    element.innerHTML = String.raw `
+  const element = document.createElement("div");
+  element.className = "landing-page display-flex";
+  element.innerHTML = String.raw`
     <div class="search-bar-container">
         <input class="container" id="search-a-plant" type="text" placeholder="search a plant">
     <div class="container" id="loading-bar-search">
@@ -15,5 +14,5 @@ export function renderLanding() {
     </div>
     <button id="feeling-lucky-btn">feeling lucky?</button>
     `;
-    return element;
+  return element;
 }

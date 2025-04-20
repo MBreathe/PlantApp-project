@@ -1,11 +1,18 @@
-
 export function renderLoadingScreen() {
-    const element = document.createElement('div');
-    element.className = 'loading-page display-flex';
-    element.innerHTML = String.raw `
+  const element = document.createElement("div");
+  element.className = "loading-page display-flex";
+  element.innerHTML = String.raw`
     <div id="loading-container">
         <div id="loading-text-container">
-            <span>loading</span><span id="resources">resources</span><span id="api">API</span><span id="pages">pages</span><span id="plants">plants</span>
+            <p>loading</p>
+            <div>
+              <span class="rotating-loading">*</span>
+              <span class="rotating-loading">manuals</span>
+              <span class="rotating-loading">resources</span>
+              <span class="rotating-loading">API</span>
+              <span class="rotating-loading">pages</span>
+              <span class="rotating-loading">plants</span>
+            </div>
         </div>
         <div class="container" id="loading-bar-container">
             <div id="loading-bar">
@@ -17,5 +24,5 @@ export function renderLoadingScreen() {
         <p>design and code by<br>makebreathe</p>
     </footer>
     `;
-    return element;
+  return element;
 }
