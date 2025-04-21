@@ -24,7 +24,7 @@ export function renderPlantPage() {
     <p class="container tag" id="plant-description"></p>
     <div class="tag-container" id="bottom-tag-container"></div>
     <div class="container tag">
-        <img id="hardiness-map" src="../../src/assets/plantPage/hardiness-map.png" alt="Hardiness map"/>
+        <img id="hardiness-map" src="src/assets/plantPage/hardiness-map.png" alt="Hardiness map"/>
     </div>
     <div class="display-flex">
         <button id="return-to-search">return to search</button>

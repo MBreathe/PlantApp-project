@@ -27,6 +27,6 @@ export class KeyChain {
 
 export const PERENUAL_KEY_CHAIN = new KeyChain(
   "perenual",
-  "sk-D2uq67f3bd2d72baf9656",
+  "//sk-D2uq67f3bd2d72baf9656",
   { search: "&q=", page: "&page=" },
 );
