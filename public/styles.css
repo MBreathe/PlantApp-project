@@ -52,7 +52,7 @@ button {
 }
 button:hover {
   margin-top: 0.7rem;
-  margin-left: 0.3rem;
+  margin-left: 1.3rem;
   box-shadow: -0.3rem 0.3rem 0 #2f2c27;
 }
 button:active {
@@ -315,6 +315,11 @@ button:active {
   padding: 0.1rem 0.4rem;
   margin: 0.6rem;
   width: fit-content;
+}
+.tag-hover:hover {
+  box-shadow: none;
+  margin: 0.9rem 0.9rem 0.3rem 0.3rem;
+  cursor: default;
 }
 .tag-bad {
   background-color: #f04227;

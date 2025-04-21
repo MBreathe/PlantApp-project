@@ -7,6 +7,7 @@ import { initPlantPage } from "../pages/plantPage.js";
 const { saveToLocalStorage, loadLocalStorage } = storage();
 const { fetchPlantList, fetchPlantDetails } = fetchers();
 
+//main loader
 export function initApp() {
   if (localStorage.length > 0) {
     loadLocalStorage();
@@ -20,6 +21,7 @@ export function initApp() {
   }
 }
 
+//loading screen
 export function mainLoadingAnimation() {
   loadLocalStorage();
   if (!STATUS.mainAnimation) {
@@ -59,6 +61,7 @@ export function mainLoadingAnimation() {
   }, 100);
 }
 
+//landing page
 export function landingPageRenderError(error) {
   const errorHandlerEl = document.querySelector("#error-handler");
   errorHandlerEl.innerHTML = error;
@@ -112,6 +115,10 @@ export function feelingLucky() {
   initPlantPage();
 }
 
+//about page
+
+
+//plant page
 export function renderDescriptionAndTags(plantInfo) {
   const topTagContainerEl = document.querySelector("#top-tag-container");
   if (topTagContainerEl) topTagContainerEl.innerHTML = "";
@@ -151,7 +158,7 @@ export function renderDescriptionAndTags(plantInfo) {
     if (tag.textContent.length > 1) {
       const tagEl = document.createElement("p");
       tagEl.textContent = tag.textContent;
-      tagEl.className = "container tag";
+      tagEl.className = "container tag tag-hover";
       if (tag.className) tagEl.classList.add(tag.className);
       topTagContainerEl.appendChild(tagEl);
     }
@@ -258,7 +265,7 @@ export async function populatePlantPage() {
     scientificNameEl.textContent = `(${plantInfo.scientific_name[0].toLowerCase()})`;
 
     const plantImg = document.querySelector("#plant-image");
-    plantImg.src = plantInfo.default_image.original_url;
+    plantInfo.default_image?.original_url ? plantImg.src = plantInfo.default_image.original_url : plantImg.src = 'src/assets/plantPage/placeholder-plant.png';
     plantImg.alt = `Image of a ${plantName}`;
 
     renderDescriptionAndTags(plantInfo);
