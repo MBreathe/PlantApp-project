@@ -117,7 +117,6 @@ export function feelingLucky() {
 
 //about page
 
-
 //plant page
 export function renderDescriptionAndTags(plantInfo) {
   const topTagContainerEl = document.querySelector("#top-tag-container");
@@ -265,7 +264,9 @@ export async function populatePlantPage() {
     scientificNameEl.textContent = `(${plantInfo.scientific_name[0].toLowerCase()})`;
 
     const plantImg = document.querySelector("#plant-image");
-    plantInfo.default_image?.original_url ? plantImg.src = plantInfo.default_image.original_url : plantImg.src = 'src/assets/plantPage/placeholder-plant.png';
+    plantInfo.default_image?.original_url
+      ? (plantImg.src = plantInfo.default_image.original_url)
+      : (plantImg.src = "src/assets/plantPage/placeholder-plant.png");
     plantImg.alt = `Image of a ${plantName}`;
 
     renderDescriptionAndTags(plantInfo);
