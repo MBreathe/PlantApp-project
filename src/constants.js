@@ -4,6 +4,7 @@ export const STATUS = {
   plantId: null,
   plantName: null,
   mainAnimation: true, // true = show/false = don't
+  aboutPage: false,
 };
 
 export class KeyChain {

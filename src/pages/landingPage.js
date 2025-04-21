@@ -1,6 +1,7 @@
 import { APP_CONTAINER, STATUS } from "../constants.js";
 import { renderLanding } from "../components/landingRenderer.js";
 import {
+  aboutPage,
   animateLoadingBall,
   feelingLucky,
   landingPageRenderError,
@@ -96,4 +97,8 @@ export function initLandingPage() {
   // feeling lucky button
   const feelingLuckyBtn = document.querySelector("#feeling-lucky-btn");
   feelingLuckyBtn.addEventListener("click", () => feelingLucky());
+
+  // about button
+  const aboutBtn = document.querySelector("#about-btn");
+  aboutBtn.addEventListener("click", () => aboutPage());
 }
