@@ -8,14 +8,14 @@ export function renderAboutPage() {
       <p>You can read more about this project on my GitHub and if you want you can follow me on instagram (I haven’t posted in a while, but will get back to it very soon).</p>
       <p>Thank you for getting this far and hope you like the little projects that I have!</p>
     </div>
-    <h1>some important links</h1>
-    <div>
-      <button>GitHub</button>
-      <button>instagram</button>
-      <button>HYF[HackYourFuture]</button>
-      <button>perenualAPI</button>
+    <h1>links</h1>
+    <div id="link-container">
+      <button id="github-btn">GitHub</button>
+      <button id="instagram-btn">instagram</button>
+      <button id="hyf-btn">HYF[HackYourFuture]</button>
+      <button id="api-btn">perenualAPI</button>
     </div>
-    <button>return to search</button>
+    <button id="return-to-search">return to search</button>
     `;
   return element;
 }

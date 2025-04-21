@@ -11,6 +11,7 @@ export function storage() {
       STATUS.plantName = storedStatus.plantName;
       STATUS.plantId = storedStatus.plantId;
       STATUS.mainAnimation = storedStatus.mainAnimation;
+      STATUS.aboutPage = storedStatus.aboutPage;
     }
   }
   function clearLocalStorage() {

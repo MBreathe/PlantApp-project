@@ -3,6 +3,7 @@ import { STATUS } from "../constants.js";
 import { initLandingPage } from "../pages/landingPage.js";
 import { storage } from "./localStorage.js";
 import { initPlantPage } from "../pages/plantPage.js";
+import { initAboutPage } from "../pages/aboutPage.js";
 
 const { saveToLocalStorage, loadLocalStorage } = storage();
 const { fetchPlantList, fetchPlantDetails } = fetchers();
@@ -13,6 +14,8 @@ export function initApp() {
     loadLocalStorage();
     if (STATUS.plantId) {
       initPlantPage();
+    } else if (STATUS.aboutPage) {
+      initAboutPage();
     } else {
       initLandingPage();
     }
@@ -63,6 +66,8 @@ export function mainLoadingAnimation() {
 
 //landing page
 export function landingPageRenderError(error) {
+  const suggestionsEl = document.querySelector("#search-suggestions");
+  if (suggestionsEl) suggestionsEl.style.display = "none";
   const errorHandlerEl = document.querySelector("#error-handler");
   errorHandlerEl.innerHTML = error;
   errorHandlerEl.style.display = "block";
@@ -70,6 +75,7 @@ export function landingPageRenderError(error) {
 
 export async function renderSuggestions(plantName) {
   const suggestionList = document.querySelector("#search-suggestions");
+  suggestionList.style.display = "block";
   try {
     const data = await fetchPlantList(plantName);
     const plantData = [...new Set(data)]; // only works for primitive values (doesn't work well with objects)
@@ -115,7 +121,11 @@ export function feelingLucky() {
   initPlantPage();
 }
 
-//about page
+export function aboutPage() {
+  STATUS.aboutPage = true;
+  saveToLocalStorage();
+  initAboutPage();
+}
 
 //plant page
 export function renderDescriptionAndTags(plantInfo) {

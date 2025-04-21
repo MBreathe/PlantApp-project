@@ -12,7 +12,10 @@ export function renderLanding() {
     <div id="search-suggestions-container">
         <ul id="search-suggestions"></ul>    
     </div>
-    <button id="feeling-lucky-btn">feeling lucky?</button>
+    <div>
+      <button id="feeling-lucky-btn">feeling lucky?</button>
+      <button id="about-btn">about</button>
+    </div>
     `;
   return element;
 }

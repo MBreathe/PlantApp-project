@@ -51,13 +51,11 @@ button {
   cursor: pointer;
 }
 button:hover {
-  margin-top: 0.7rem;
-  margin-left: 1.3rem;
+  margin: 0.7rem 0.7rem 1.3rem 1.3rem;
   box-shadow: -0.3rem 0.3rem 0 #2f2c27;
 }
 button:active {
-  margin-top: 1rem;
-  margin-left: 0;
+  margin: 1rem;
   box-shadow: none;
 }
 
@@ -143,6 +141,12 @@ button:active {
   text-align: center;
 }
 
+#about-btn {
+  background-color: #3e8953;
+  border: none;
+  color: #efeee9;
+}
+
 /*
     landingPage styling
 */
@@ -226,6 +230,30 @@ button:active {
 }
 #search-suggestions-container ul li:hover {
   background-color: #3e8953;
+}
+
+/*
+    aboutPage styling
+*/
+
+.about-page {
+  padding: 10vw;
+}
+
+.about-page h1 {
+  margin: 1rem;
+  font-weight: 100;
+}
+
+#link-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-page .container {
+  padding: 2rem;
+  margin-bottom: 10rem;
 }
 
 /*
